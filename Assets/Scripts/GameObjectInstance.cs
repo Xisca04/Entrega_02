@@ -14,6 +14,8 @@ public class GameObjectInstance : MonoBehaviour
     private void Start()
     {
         InvokeRepeating("AppleInstance", _time, _time);
+
+        // CancelInvoke("AppleInstance"); para parar las instancias
     }
 
     private void AppleInstance()
@@ -26,5 +28,12 @@ public class GameObjectInstance : MonoBehaviour
         int randomX = Random.Range(-spawnPosX, spawnPosX);
         int randomY = Random.Range(-spawnPosY, spawnPosY);
         return new Vector2(randomX, randomY);
+
+        /*
+        if (applePosition = ocuppedPosition)
+        {
+            return new Vector2(randomX, randomY);
+        }
+        */
     }
 }
