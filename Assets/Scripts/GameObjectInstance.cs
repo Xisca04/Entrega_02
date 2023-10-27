@@ -44,4 +44,13 @@ public class GameObjectInstance : MonoBehaviour
             occupiedPositionList.Add(newPosition);
         }
     }
+
+    //bucle do while encontrar vector que no está en lista --> lo guardas en la lista
+/*
+    do
+    {
+
+    }
+    while()
+*/
 }
