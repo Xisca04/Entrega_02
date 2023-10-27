@@ -1,3 +1,4 @@
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,6 +11,9 @@ public class GameObjectInstance : MonoBehaviour
    
     private int spawnPosX = 2;
     private int spawnPosY = 2;
+
+    private Vector2 applePos;
+    //private Vector2 ocuppiedPos;
 
     private void Start()
     {
@@ -28,12 +32,15 @@ public class GameObjectInstance : MonoBehaviour
         int randomX = Random.Range(-spawnPosX, spawnPosX);
         int randomY = Random.Range(-spawnPosY, spawnPosY);
         return new Vector2(randomX, randomY);
-
+        
         /*
-        if (applePosition = ocuppedPosition)
+        bool isOcuppied = AppleInstance.apple.TRposition;
+        
+        if (isOcuppied)
         {
             return new Vector2(randomX, randomY);
         }
         */
     }
+
 }
