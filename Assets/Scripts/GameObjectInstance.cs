@@ -9,8 +9,8 @@ public class GameObjectInstance : MonoBehaviour
    
     private float _time = 1f;
    
-    private int spawnPosX = 2;
-    private int spawnPosY = 2;
+    private int spawnPosX = 4;
+    private int spawnPosY = 4;
 
     private Vector2 applePos;
     //private Vector2 ocuppiedPos;
