@@ -12,7 +12,7 @@ public class GameObjectInstance : MonoBehaviour
     private int spawnPosX = 4;
     private int spawnPosY = 4;
 
-    private Vector2 applePos;
+    //private Vector2 applePos;
     //private Vector2 ocuppiedPos;
 
     private void Start()
