@@ -14,11 +14,13 @@ public class GameObjectInstance : MonoBehaviour
 
     private void Start()
     {
-        if(occupiedPositionList.Count == 0)
-        {
-            InvokeRepeating("AppleInstance", _time, _time);
-        }
-        else if(occupiedPositionList.Count == 64)
+
+        InvokeRepeating("AppleInstance", _time, _time);
+    }
+
+    private void Update()
+    {
+        if (occupiedPositionList.Count == 64)
         {
             CancelInvoke("AppleInstance");
         }
@@ -29,16 +31,11 @@ public class GameObjectInstance : MonoBehaviour
         Instantiate(apple, RandomSpawnPos(), apple.transform.rotation);
     }
 
-    private Vector2 RandomSpawnPos(Vector2 pos) 
+    private Vector2 RandomSpawnPos() 
     {
         int randomX = Random.Range(-spawnPosX, spawnPosX);
         int randomY = Random.Range(-spawnPosY, spawnPosY);
         return new Vector2(randomX, randomY);
-        
-        if (occupiedPositionList.Count == false)
-        {
-            return new Vector2(randomX, randomY);
-            occupiedPositionList.Add(new Vector2(randomX, randomY));
-        }
+        occupiedPositionList.Add(new Vector2(randomX, randomY));
     }
 }
