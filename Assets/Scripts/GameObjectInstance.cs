@@ -10,10 +10,11 @@ public class GameObjectInstance : MonoBehaviour
     private int spawnPosX = 4;
     private int spawnPosY = 4;
     private List<Vector2> occupiedPositionList;
-    private Vector2 applePos;
+    //private Vector2 applePos;
 
     private void Start()
     {
+        occupiedPositionList = new List<Vector2>();
         InvokeRepeating("AppleInstance", _time, _time);
     }
 
@@ -27,19 +28,18 @@ public class GameObjectInstance : MonoBehaviour
 
     private void AppleInstance()
     {
-        Instantiate(apple, RandomSpawnPos(applePos), apple.transform.rotation);
+        Instantiate(apple, RandomSpawnPos(), apple.transform.rotation);
     }
 
-    private Vector2 RandomSpawnPos(Vector2 applePos) 
+    private Vector2 RandomSpawnPos() 
     {
-        int randomX = Random.Range(-spawnPosX, spawnPosX);
-        int randomY = Random.Range(-spawnPosY, spawnPosY);
-
         Vector2 newVector;
 
         do
         {
-          return newVector = new Vector2(randomX, randomY);
+            int randomX = Random.Range(-spawnPosX, spawnPosX);
+            int randomY = Random.Range(-spawnPosY, spawnPosY);
+            newVector = new Vector2(randomX, randomY);
 
         } while (occupiedPositionList.Contains(newVector));
        
@@ -47,6 +47,8 @@ public class GameObjectInstance : MonoBehaviour
         {
             occupiedPositionList.Add(newVector);
         }
+
+        return newVector;
     }
 }
 
