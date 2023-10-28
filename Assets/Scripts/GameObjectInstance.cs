@@ -10,7 +10,6 @@ public class GameObjectInstance : MonoBehaviour
     private int spawnPosX = 4;
     private int spawnPosY = 4;
     private List<Vector2> occupiedPositionList;
-    //private Vector2 applePos;
 
     private void Start()
     {
