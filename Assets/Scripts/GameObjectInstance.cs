@@ -11,7 +11,6 @@ public class GameObjectInstance : MonoBehaviour
     private int spawnPosY = 4;
     private List<Vector2> occupiedPositionList;
     private Vector2 applePos;
-    private Vector2 newPosition;
 
     private void Start()
     {
@@ -28,29 +27,26 @@ public class GameObjectInstance : MonoBehaviour
 
     private void AppleInstance()
     {
-        Instantiate(apple, RandomSpawnPos(applePos, newPosition), apple.transform.rotation);
+        Instantiate(apple, RandomSpawnPos(applePos), apple.transform.rotation);
     }
 
-    private Vector2 RandomSpawnPos(Vector2 applePos, Vector2 newPosition) 
+    private Vector2 RandomSpawnPos(Vector2 applePos) 
     {
         int randomX = Random.Range(-spawnPosX, spawnPosX);
         int randomY = Random.Range(-spawnPosY, spawnPosY);
-        return applePos = new Vector2(randomX, randomY);
-        occupiedPositionList.Add(applePos);
 
-        if (occupiedPositionList.Count = true)
+        Vector2 newVector;
+
+        do
         {
-            return newPosition = new Vector2(randomX,randomY);
-            occupiedPositionList.Add(newPosition);
+          return newVector = new Vector2(randomX, randomY);
+
+        } while (occupiedPositionList.Contains(newVector));
+       
+        if (!occupiedPositionList.Contains(newVector))
+        {
+            occupiedPositionList.Add(newVector);
         }
     }
-
-    //bucle do while encontrar vector que no está en lista --> lo guardas en la lista
-/*
-    do
-    {
-
-    }
-    while()
-*/
 }
+
