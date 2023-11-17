@@ -49,5 +49,23 @@ public class GameObjectInstance : MonoBehaviour
 
         return newVector;
     }
+
+    /*
+     ¡Buen trabajo!
+
+     Veo que has optado por usar una imagen completa de un tablero. La has configurado correctamente. Bien hecho
+
+     Cuidado que te queda una manzana por ahí suelta en la escena que no pinta nada
+
+     Buena elección la de usar InvokeRepeating
+
+     Cuidado con usar Magic numbers
+
+     Podrías hacer la comprobación del Update en otro sitio, pues basta comprobar antes de instanciar y no constantemente
+
+     Fíjate que el if después del while no es necesario, pues si sales del while es porque la condición del while es falsa
+
+    */
+
 }
 
